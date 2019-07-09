@@ -14,4 +14,4 @@ use App\Http\Controllers\CarsController;
 |
 */
 
-Route::resource('cars','CarsController');
+Route::resource('cars', 'CarsController');
