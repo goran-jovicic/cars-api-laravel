@@ -35,6 +35,8 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, Car::STORE_RULES);
+
         $car = new Car();
 
         $car->brand = $request->input('brand');
@@ -90,6 +92,8 @@ class CarsController extends Controller
         $car->isAutomatic = $request->input('isAutomatic');
         $car->engine = $request->input('engine');
         $car->numberOfDoors = $request->input('numberOfDoors');
+
+        $this->validate($request, Car::STORE_RULES);
 
         $car->save();
 
