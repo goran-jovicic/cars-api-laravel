@@ -13,5 +13,6 @@ use App\Http\Controllers\CarsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/login','Auth\LoginController@authenticate');
 
 Route::resource('cars', 'CarsController');
