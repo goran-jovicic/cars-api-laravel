@@ -15,4 +15,6 @@ use App\Http\Controllers\CarsController;
 */
 Route::post('/login','Auth\LoginController@authenticate');
 
+Route::post('/register','Auth\RegisterController@register');
+
 Route::resource('cars', 'CarsController');
