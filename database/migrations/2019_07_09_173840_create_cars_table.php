@@ -20,7 +20,7 @@ class CreateCarsTable extends Migration
             $table->integer('year');
             $table->integer('maxSpeed');
             $table->boolean('isAutomatic');
-            $table->integer('engine');
+            $table->string('engine');
             $table->integer('numberOfDoors');
             $table->timestamps();
         });
