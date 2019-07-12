@@ -74,9 +74,10 @@ class RegisterController extends Controller
 
     public function register(Request $request) {
 
+        \Log::info($request->input('password_confirmation'));
         $this->validate($request, [
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'required | confirmed',
             'email' => 'required | email | unique:users'
         ]);
     
