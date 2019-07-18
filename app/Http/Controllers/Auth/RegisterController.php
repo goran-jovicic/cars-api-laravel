@@ -72,7 +72,8 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
 
         \Log::info($request->input('password_confirmation'));
         $this->validate($request, [
@@ -80,7 +81,7 @@ class RegisterController extends Controller
             'password' => 'required | confirmed',
             'email' => 'required | email | unique:users'
         ]);
-    
+
         return User::create([
             'name' => $request->input('username'),
             'email' => $request->input('email'),
